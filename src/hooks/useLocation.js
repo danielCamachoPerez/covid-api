@@ -11,13 +11,6 @@ const useLocation = userLocation => {
             const url = 'https://api.covid19api.com/live/country/mexico/status/confirmed/date/2021-02-26T00:00:00Z'
             const result = await axios.get(url)
             setProvince(result.data)
-            //console.log(result.data);
-            //result.data.map(response=>console.log(response.Province))
-            //result.data.map(response=>setProvince([...province, response.Province]))
-            //const province = result.data
-            //province.filter(estado=>console.log(estado==='hidalgo'))
-            //setProvince(result.data)
-            //province.map(res=>console.log(res))
         }
         request()
     },[origin])
