@@ -3,7 +3,6 @@ import React from 'react';
 const Content = ({filterName, confirmed, deaths, date}) => {
     return ( 
         <div className="content is-center">
-            <div className="has-text-centered">{filterName}</div>
             <table>
                 <tbody>
                     <tr>
