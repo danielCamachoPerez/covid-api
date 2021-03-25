@@ -8,7 +8,7 @@ const useLocation = userLocation => {
     useEffect(()=>{
         const request = async ()=>{
             if(!origin) return
-            const url = 'https://api.covid19api.com/live/country/mexico/status/confirmed/date/2021-03-12T00:00:00Z'
+            const url = 'https://api.covid19api.com/live/country/mexico/status/confirmed/date/2021-03-25T00:00:00Z'
             const result = await axios.get(url)
             setProvince(result.data)
         }
