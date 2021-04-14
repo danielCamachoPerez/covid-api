@@ -3,9 +3,12 @@ import React from "react";
 const Content = ({ filterName, confirmed, deaths, date }) => {
   const todayDate = (date)=>{
       const lastUpdate = new Date(date)
-      const newDate = lastUpdate.getDate()
-      const newMonth = lastUpdate.getMonth()
-      const newYear = lastUpdate.getFullYear()
+      const newDate = new Intl.DateTimeFormat('es', {day: '2-digit'}).format(lastUpdate)
+      const newMonth = new Intl.DateTimeFormat('es', {month: 'long'}).format(lastUpdate)
+      const newYear = new Intl.DateTimeFormat('es', {year: 'numeric'}).format(lastUpdate)
+      //const newDate = lastUpdate.getDate()
+      //const newMonth = lastUpdate.getMonth()
+      //const newYear = lastUpdate.getFullYear()
       return {newDate, newMonth, newYear}
   }
   const {newDate, newMonth, newYear} = todayDate(date) 
@@ -29,7 +32,7 @@ const Content = ({ filterName, confirmed, deaths, date }) => {
       </table>
 
       <div className="content is-center">
-        <h5 className="has-text-centered">last update: {newDate} del mes {newMonth} de {newYear}</h5>
+        <h5 className="has-text-centered">last update: {newDate} de {newMonth} de {newYear}</h5>
       </div>
     </div>
   );
