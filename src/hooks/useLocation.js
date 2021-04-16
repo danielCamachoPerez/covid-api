@@ -9,8 +9,16 @@ const useLocation = userLocation => {
         const request = async ()=>{
             if(!origin) return
             //const url = 'https://api.covid19api.com/live/country/mexico/status/confirmed/date/2021-04-07T00:00:00Z'
-            const date_day = new Date().getDate() -1
-            const url = `https://api.covid19api.com/live/country/mexico/status/confirmed/date/2021-04-${date_day}T00:00:00Z`
+            const date = new Date()
+            date.setDate(date.getDate() - 1)
+            const date_year = date.getFullYear()
+            const date_month = new Intl.DateTimeFormat('es', {month:'numeric'}).format(date)
+            //const date_month = date.getMonth()
+            const date_day = date.getDate()
+            //const date_day = new Intl.DateTimeFormat('es', {day:'2-digit'}).format(full_date)
+            //const date_month = new Intl.DateTimeFormat('es', {month:'numeric'}).format(full_date)
+            //const date_year = new Intl.DateTimeFormat('es', {year:'numeric'}).format(full_date)
+            const url = `https://api.covid19api.com/live/country/mexico/status/confirmed/date/${date_year}-${date_month}-${date_day}T00:00:00Z`
             const result = await axios.get(url)
             setProvince(result.data)
         }

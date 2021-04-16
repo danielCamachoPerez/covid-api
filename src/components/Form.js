@@ -14,7 +14,6 @@ const Form = () => {
         const lowerLetter = upper.toLowerCase().replace(/\b[a-z]/g, (letter)=>{
             return letter.toUpperCase()
         })
-        console.log(lowerLetter);
         setData(lowerLetter)
         //setData(upper.charAt(0).toUpperCase() + upper.slice(1))
     }
