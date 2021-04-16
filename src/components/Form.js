@@ -52,11 +52,11 @@ const Form = () => {
     }
     return ( 
         <div className="container">
-            <h5 className="title is-5 has-text-centered">find information on infections in your state</h5>
+            <h5 className="title is-5 has-text-centered">Find contagion information in your state</h5>
             <form onSubmit={submit}>
                 <div className="field">
                     <div>
-                        <label htmlFor="estado">Estado</label>
+                        <label htmlFor="estado">State</label>
                     </div>
                     <div className="select is-primary mt-2">
                         <select onChange={getData} name="state" id="estado">
@@ -69,7 +69,7 @@ const Form = () => {
                 </div>
                 <div className="field">
                     <div className="control">
-                        <input className="button is-primary" type="submit" value="Buscar"/>
+                        <input className="button is-primary" type="submit" value="Search"/>
                     </div>
                 </div>
             </form>

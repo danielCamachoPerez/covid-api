@@ -28,7 +28,7 @@ const useLocation = userLocation => {
         return (
             <div>
                 <div className="content is-center">
-                    <h1 className="has-text-centered">Resultado</h1>
+                    <h1 className="has-text-centered">Outcome</h1>
                 </div>
                 {province.filter(response=>(response.Province===origin)).map(filterName=>(
                     <Content
